@@ -1,0 +1,84 @@
+<section class="section">
+    <div class="container mt-5">
+        <h1 class="m-3">New Order</h1>
+        <div class="card p-3">
+            <div class="row">
+                <div class="col">
+                    <h2 class="m-3">Order Basket</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <div class="form-group">
+                            <label for="productSelect" class="ml-2"><small>Product</small></label>
+
+
+                            <select class="form-control selectpicker" id="productSelect"
+                                title="Choose one of the following..." data-live-search="true" required
+                                onchange="updatePricePerUnit()">
+                                {{#each products}}
+                                    <option data-id="{{this.id}}" value="{{this.name}}">{{this.name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="quantitySelect" class="ml-2"><small>Quantity</small></label>
+                                <input type="number" class="form-control btn-light " id="quantitySelect" min="0"
+                                    name="quantity" id="productQuantity" placeholder="Enter quantity" required>
+
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="pricePerUnit" class="ml-2"><small>Price / unit ( <i class="text-secondary fas fa-euro-sign"></i> )</small></label>
+                                    <input type="text" disabled class="w-75 form-control btn-light text-secondary" name="pricePerUnit"
+                                        id="pricePerUnit" value="0">
+                                </div>
+                            </div>
+
+                        </div>
+                        <button type="submit" id="addRowButton" class="btn btn-success my-3">Add to basket</button>
+                    </form>
+
+                </div>
+                <div class="col">
+                    <table id="orderLinesTable" class="table table-curved  text-center">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Subtotal ( <i class="fas fa-euro-sign"></i> )</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div class="row align-middle">
+                    <label for="pricePerUnit" class="m-2"><h4>Total</h4></label>                    
+                    <input type="text" class="mx-2 w-50 btn-light form-control" disabled name="" id="total">
+                    <span><i class="fas fa-euro-sign"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-2">
+            <div class="row">
+                <div class="col">
+                    <h2 class="m-3">Customer select</h2>
+                    <div class="form-group">
+                        <select class="form-control selectpicker" id="customerSelect"
+                            title="Choose one of the following..." data-live-search="true">
+                            {{#each customers}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="createOrderButton" class="mt-3 btn btn-block btn-success">Create Order</button>
+    </div>
+    </div>
+</section>

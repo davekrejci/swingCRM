@@ -1,0 +1,50 @@
+<section class="section">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <table id="orderTable" class="table table-curved text-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Order Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each orders}}
+                        <tr>
+                            <td class="align-middle" >{{this.id}}</td>
+                            <td class="align-middle" >{{this.Customer.name}}</td>
+                            <td class="align-middle">{{this.createdAt}}</td>
+                            <td class="align-middle">{{this.total}} <i class="fas fa-euro-sign"></i></td>
+                            <td class="align-middle w-25 p-0">
+                                <a href="/orders/details/{{this.id}}" class="btn btn-primary">View detail</a>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteOrderModal"
+                                    data-id="{{this.id}}" data-name="{{this.name}}">Delete</button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Delete Confirmation
+            </div>
+            <div class="modal-body">
+               Delete order <b><span id="productName"></span></b> from the system? <br>  This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" id="modalDeleteButton" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

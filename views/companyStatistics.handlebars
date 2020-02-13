@@ -1,0 +1,33 @@
+<section class="section">
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card p-3 m-3">
+                    <h3 class="mb-3 text-center">Products sold</h3>
+                    <ul id="productsList" class="list-group"></ul>
+                    <button id="exportproductsList" class="btn btn-primary mt-3">Export</button>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="card p-3 m-3">
+                        <div class="p-3 m-3 w-100 chart-container" style="position: relative; height:35vh; width:80vw">
+                            <canvas id="yearchart"></canvas>
+                        </div>
+                        <button id="exportByYear" class="btn btn-primary">Export</button>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="card p-3 m-3">
+                        <div class="p-3 m-3 w-100" class="chart-container" style="position: relative; height:35vh; width:80vw">
+                            <canvas id="monthchart"></canvas>
+                        </div>
+                        <button id="exportByMonth" class="btn btn-primary">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>

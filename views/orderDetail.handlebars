@@ -1,0 +1,35 @@
+<section class="section">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h2>Order</h2>
+                <div class="card p-3 my-2">
+                    <div class="my-1"><span class="badge badge-pill badge-primary mr-2 px-3">ID</span> {{order.id}}</div>
+                    <div class="my-1"><span class="badge badge-pill badge-primary mr-2 px-3">Customer</span> {{order.Customer.name}}</div>
+                    <div class="my-1"><span class="badge badge-pill badge-primary mr-2 px-3">Date</span> {{order.createdAt}}</div>
+                    <div class="my-1"><span class="badge badge-pill badge-primary mr-2 px-3">Total</span> {{order.total}} €</i></div>
+                </div>
+                <table id="orderItemTable" class="table table-curved text-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Order Item SKU</th>
+                            <th>Order Item Name</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each order.OrderItems}}
+                        <tr>
+                            <td class="align-middle" >{{this.sku}}</td>
+                            <td class="align-middle" >{{this.name}}</td>
+                            <td class="align-middle" >{{this.quantity}}</td>
+                            <td class="align-middle">{{this.total}} <i class="fas fa-euro-sign"></i></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

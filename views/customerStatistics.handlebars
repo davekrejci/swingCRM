@@ -1,0 +1,32 @@
+<section class="section">
+    <div class="container-fluid">
+        <div class="row m-3">
+            <select class="form-control selectpicker" id="customerSelect" title="Choose one of the following customers..." data-live-search="true">
+                {{#each customers}}
+                    <option data-id="{{this.id}}" value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card p-3 m-3">
+                    <div class="row">
+                        <select class="form-control selectpicker ml-3" id="productSelect" title="Choose one of the following products..." data-live-search="true"></select>
+                    </div>
+                    <div class="p-3 m-3 w-100 chart-container" style="position: relative; height:35vh; width:80vw">
+                        <canvas id="productchart"> </canvas>
+                    </div>
+                    <button id="exportByProduct" class="btn btn-primary">Export</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                    <div class="card p-3 m-3">
+                        <div class="row mt-5"></div>
+                        <div class="p-3 m-3 w-100 chart-container" style="position: relative; height:35vh; width:80vw">
+                            <canvas id="averagechart"></canvas>
+                        </div>
+                        <button id="exportByAverage" class="btn btn-primary">Export</button>
+                    </div>
+            </div>                
+        </div>
+</section>
