@@ -17,19 +17,19 @@ This project was built with the help of
 
 ## Customer list
 
-![customers](../media/customers.png?raw=true)
+![customers](../media/customers.PNG)
 
 ## Product list
 
-![products](../media/products.png?raw=true)
+![products](../media/products.PNG)
 
 ## Order creation
 
-![order](../media/order.png?raw=true)
+![order](../media/order.PNG)
 
 ## Statistics
 
-![statistics](../media/statistics.png?raw=true)
+![statistics](../media/statistics.PNG)
 
 <!-- LICENSE -->
 
